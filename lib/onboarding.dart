@@ -97,9 +97,9 @@ class _OnboardingState extends State<Onboarding> with WidgetsBindingObserver {
                                 child: Text("Explore Upcoming and Nearby Events",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 30,
+                                        fontSize: 25,
                                         color: Colors.white,
-                                        fontFamily: "AirbnbCereal_W_XBd")),
+                                    )),
                               )
                             : SizedBox(),
                         _current == 1
@@ -109,9 +109,9 @@ class _OnboardingState extends State<Onboarding> with WidgetsBindingObserver {
                                     " Web Have Modern Events Calendar Feature",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 30,
+                                        fontSize: 25,
                                         color: Colors.white,
-                                        fontFamily: "AirbnbCereal_W_XBd")),
+                                        )),
                               )
                             : SizedBox(),
                         _current == 2
@@ -121,9 +121,9 @@ class _OnboardingState extends State<Onboarding> with WidgetsBindingObserver {
                                     "  To Look Up More Events or Activities Nearby By Map",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 30,
+                                        fontSize: 25,
                                         color: Colors.white,
-                                        fontFamily: "AirbnbCereal_W_XBd")),
+                                       )),
                               )
                             : SizedBox(),
                         Padding(
@@ -131,37 +131,34 @@ class _OnboardingState extends State<Onboarding> with WidgetsBindingObserver {
                           child: Text(
                               " In publishing and graphic design,Lorem is",
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   color: Colors.white,
-                                  fontFamily: "AirbnbCereal_W_XBd"),
+                                  ),
                               textAlign: TextAlign.center),
                         ),
                         Text(" a placeholder text commonly",
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
-                                fontFamily: "AirbnbCereal_W_XBd"),
+                               ),
                             textAlign: TextAlign.center),
                       ],
                     ),
+                    SizedBox(height: 50),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 80),
-                          child: Text(
-                            'Skip',
-                            style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontFamily: "AirbnbCereal_W_XBd",
-                              fontWeight: FontWeight.normal,
-                            ),
+                        Text(
+                          'Skip',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            top: 80,
+
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -192,19 +189,15 @@ class _OnboardingState extends State<Onboarding> with WidgetsBindingObserver {
                             }).toList(),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 80),
-                          child: TextButton(
-                            onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => SignIn())),
-                            child: Text(
-                              'Next',
-                              style: TextStyle(
-                                fontFamily: "AirbnbCereal_W_XBd",
-                                fontSize: 25,
-                                color: Colors.white,
-                              ),
+                        TextButton(
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => SignIn())),
+                          child: Text(
+                            'Next',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
                             ),
                           ),
                         ),

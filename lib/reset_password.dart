@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:pro_flutter/home_screen.dart';
 import 'package:pro_flutter/widget/textfieldwidget.dart';
 
+import 'dashboard.dart';
 class ResetPassword extends StatefulWidget {
   const ResetPassword({Key? key}) : super(key: key);
 
@@ -21,15 +21,15 @@ class _ResetPasswordState extends State<ResetPassword> {
         backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding:  EdgeInsets.all(20),
+        padding:  EdgeInsets.only(left: 20,right: 20),
         child: Column(
           children: [
             Row(
               children: [
                 Text(
-                  "Reset Password",
+                  "Resset Password",
                   style:
-                  TextStyle(fontSize: 30, fontFamily: "AirbnbCereal_W_Lt"),
+                  TextStyle(fontSize: 25),
                 ),
               ],
             ),
@@ -39,8 +39,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                 Text(
                   "Please enter your email address to ",
                   style: TextStyle(
-                    fontFamily: "AirbnbCereal_W_Lt",
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ],
@@ -51,18 +50,18 @@ class _ResetPasswordState extends State<ResetPassword> {
                 Text(
                   "request a password reset",
                   style:
-                  TextStyle(fontFamily: "AirbnbCereal_W_Lt", fontSize: 18),
+                  TextStyle(fontSize: 16),
                 ),
               ],
             ),
             SizedBox(height: 20),
-            TextFieldWidget(label: "abc@gmail.com",icon: Icon(Icons.mail)),
-            SizedBox(height: 30),
+            TextFieldWidget(label: "abc@email.com",icon: Icon(Icons.mail)),
+            SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child: ElevatedButton(
                 onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen())),
+                    MaterialPageRoute(builder: (context) => Dashboard())),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -70,17 +69,17 @@ class _ResetPasswordState extends State<ResetPassword> {
                   padding: EdgeInsets.symmetric(vertical: 16),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 90),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "CONTINUE",
-                        style: TextStyle(fontSize: 20.0, color: Colors.white),
+                        "SEND",
+                        style: TextStyle(fontSize: 16.0, color: Colors.white),
                       ),
-                      SizedBox(width: 80),
+                      SizedBox(width: 90),
                       CircleAvatar(
-                        backgroundColor: Colors.deepPurpleAccent.shade100,
+                        backgroundColor: Color(0xFF3D56F0),
                         radius: 12,
                         child: Icon(
                           Icons.arrow_forward,

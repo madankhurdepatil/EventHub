@@ -18,26 +18,23 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding:  EdgeInsets.all(20),
+      body: Padding(
+        padding:  EdgeInsets.only(top: 70,left: 20,right: 20),
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.only( left: 15),
-                child: Image.asset("assets/Group.png", width: 150, height: 150),
-              ),
+              Image.asset("assets/Group.png", height: 70,width: 70),
               Text("EventHub",
                   style:
-                      TextStyle(fontSize: 35,),
+                      TextStyle(fontSize: 30,),
                   textAlign: TextAlign.center),
-              SizedBox(height: 20),
+              SizedBox(height: 15),
               Row(
                 children: [
                   Text(
                     "Sign in",
-                    style: TextStyle(fontSize: 25,),
+                    style: TextStyle(fontSize: 25),
                   ),
                 ],
               ),
@@ -47,7 +44,7 @@ class _SignInState extends State<SignIn> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  hintText: "abc@gmail.com",
+                  hintText: "abc@email.com",hintStyle: TextStyle(fontSize: 16),
                   prefixIcon: Icon(Icons.mail),
                 ),
               ),
@@ -62,39 +59,37 @@ class _SignInState extends State<SignIn> {
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: Icon(Icons.remove_red_eye_outlined)),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Row(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: FlutterSwitch(
-                      padding: 2.0,
-                      toggleSize: 15,
-                      height: 22,
-                      width: 40,
-                      activeColor: Color(0xFF5669FF),
-                      value: status1,
-                      onToggle: (val) {
-                        setState(() {
-                          status1 = val;
-                        });
-                      },
-                    ),
+                  FlutterSwitch(
+                    padding: 2.0,
+                    toggleSize: 15,
+                    height: 22,
+                    width: 40,
+                    activeColor: Color(0xFF5669FF),
+                    value: status1,
+                    onToggle: (val) {
+                      setState(() {
+                        status1 = val;
+                      });
+                    },
                   ),
+                  SizedBox(width: 5),
                   Text(
                     "Remember Me",
                     style: TextStyle(
-                        fontSize: 16.0,),
+                        fontSize: 14.0,),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 55),
                   Text(
                     "Forgot Password?",
                     style: TextStyle(
-                        fontSize: 16.0,),
+                        fontSize: 14.0,),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Padding(
                 padding: EdgeInsets.only(right: 20, left: 20),
                 child: ElevatedButton(
@@ -111,13 +106,14 @@ class _SignInState extends State<SignIn> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(width:65),
                         Text(
                           'SIGN IN ',
-                          style: TextStyle(fontSize: 20.0, color: Colors.white),
+                          style: TextStyle(fontSize: 16.0, color: Colors.white),
                         ),
-                        SizedBox(width: 80),
+                        SizedBox(width: 65),
                         CircleAvatar(
-                          backgroundColor: Colors.deepPurpleAccent.shade100,
+                          backgroundColor: Color(0xFF3D56F0),
                           radius: 12,
                           child: Icon(
                             Icons.arrow_forward,
@@ -130,7 +126,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -138,7 +134,7 @@ class _SignInState extends State<SignIn> {
                   Text(
                     "OR",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: Colors.grey,
                     ),
                   ),
@@ -165,7 +161,7 @@ class _SignInState extends State<SignIn> {
                         Text(
                           "Login with Google",
                           style: TextStyle(
-                              fontSize: 20,),
+                              fontSize: 16,),
                         ),
                       ],
                     ),
@@ -195,7 +191,7 @@ class _SignInState extends State<SignIn> {
                         Text(
                           "Login with Facebook",
                           style: TextStyle(
-                              fontSize: 20,),
+                              fontSize: 16,),
                         ),
                       ],
                     ),
@@ -209,14 +205,14 @@ class _SignInState extends State<SignIn> {
                   Text(
                     "Don't have an account?",
                     style:
-                        TextStyle(fontSize: 18),
+                        TextStyle(fontSize: 16),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Colors.blue.shade300,
                       ),
                     ),

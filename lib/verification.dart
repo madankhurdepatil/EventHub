@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import 'package:pro_flutter/reset_password.dart';
 
 class Verification extends StatefulWidget {
@@ -48,15 +47,16 @@ class _VerificationState extends State<Verification> {
         elevation: 0.0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.only(left: 20,right: 20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(
               children: [
                 Text(
                   "Verification",
                   style:
-                      TextStyle(fontSize: 30, fontFamily: "AirbnbCereal_W_Lt"),
+                      TextStyle(fontSize: 22),
                 ),
               ],
             ),
@@ -66,8 +66,7 @@ class _VerificationState extends State<Verification> {
                 Text(
                   "we've send you the verification",
                   style: TextStyle(
-                    fontFamily: "AirbnbCereal_W_Lt",
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ],
@@ -76,9 +75,9 @@ class _VerificationState extends State<Verification> {
             Row(
               children: [
                 Text(
-                  "code on +91 8411850361",
+                  "code on +01 2620 0323 7631",
                   style:
-                      TextStyle(fontFamily: "AirbnbCereal_W_Lt", fontSize: 18),
+                      TextStyle( fontSize: 16),
                 ),
               ],
             ),
@@ -107,17 +106,17 @@ class _VerificationState extends State<Verification> {
                   padding: EdgeInsets.symmetric(vertical: 16),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 70),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "CONTINUE",
-                        style: TextStyle(fontSize: 20.0, color: Colors.white),
+                        style: TextStyle(fontSize: 16.0, color: Colors.white),
                       ),
-                      SizedBox(width: 80),
+                      SizedBox(width: 70),
                       CircleAvatar(
-                        backgroundColor: Colors.deepPurpleAccent.shade100,
+                        backgroundColor: Color(0xFF3D56F0),
                         radius: 12,
                         child: Icon(
                           Icons.arrow_forward,
@@ -137,8 +136,7 @@ class _VerificationState extends State<Verification> {
                 Text(
                   "Re-send code in ",
                   style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: "AirbnbCereal_W_Lt",
+                    fontSize: 16,
                   ),
                 ),
                 Text("0:",
@@ -163,17 +161,13 @@ class _VerificationState extends State<Verification> {
 
   textFieldOTP({required bool first, last}) {
     return Container(
-      height: 84,
+      height: 70,
+      width: 60,
       color: (click == true) ? Colors.pink : Colors.transparent,
       child: AspectRatio(
         aspectRatio: 0.7,
         child: TextField(
           autofocus: true,
-          // onTap: (){
-          //   setState(() {
-          //     click = !(click ?? false);
-          //   });
-          // },
           onChanged: (value) {
             if (value.length == 1 && last == false) {
               FocusScope.of(context).nextFocus();

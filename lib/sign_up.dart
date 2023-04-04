@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:pro_flutter/event_details.dart';
 import 'package:pro_flutter/verification.dart';
 import 'widget/textfieldwidget.dart';
 
@@ -21,24 +22,19 @@ class _SignUpState extends State<SignUp> {
         elevation: 0.0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding:  EdgeInsets.only(left: 20,right: 20,),
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SafeArea(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding:  EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontFamily: "AirbnbCereal_W_XBd",
-                        ),
-                      ),
-                    ),
-                  ],
+              Padding(
+                padding:  EdgeInsets.only(right: 230),
+                child: Text(
+                  "Sign up",
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
               ),
               SizedBox(height: 15),
@@ -63,13 +59,14 @@ class _SignUpState extends State<SignUp> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(width:65),
                         Text(
                           "SIGN UP",
-                          style: TextStyle(fontSize: 20.0, color: Colors.white),
+                          style: TextStyle(fontSize: 16.0, color: Colors.white),
                         ),
-                        SizedBox(width: 80),
+                        SizedBox(width: 65),
                         CircleAvatar(
-                          backgroundColor: Colors.deepPurpleAccent.shade100,
+                          backgroundColor: Color(0xFF3D56F0),
                           radius: 12,
                           child: Icon(
                             Icons.arrow_forward,
@@ -90,36 +87,40 @@ class _SignUpState extends State<SignUp> {
                   Text(
                     "OR",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: Colors.grey,
-                        fontFamily: "AirbnbCereal_W_Lt"),
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Container(
-                  height: 50,
-                  width: 280,
-                  color: Colors.grey.shade50,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      left: 20,
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset("assets/google.png"),
-                        ),
-                        SizedBox(width: 20),
-                        Text(
-                          "Login with Google",
-                          style: TextStyle(
-                              fontSize: 20, fontFamily: "AirbnbCereal_W_Lt"),
-                        ),
-                      ],
+              SizedBox(height: 10),
+              GestureDetector(
+                onTap : () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => EventDetails())),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    height: 50,
+                    width: 280,
+                    color: Colors.grey.shade50,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: 20,
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Image.asset("assets/google.png"),
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            "Login with Google",
+                            style: TextStyle(
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -145,7 +146,7 @@ class _SignUpState extends State<SignUp> {
                         Text(
                           "Login with Facebook",
                           style: TextStyle(
-                              fontSize: 20, fontFamily: "AirbnbCereal_W_Lt"),
+                              fontSize: 16),
                         ),
                       ],
                     ),
@@ -159,14 +160,14 @@ class _SignUpState extends State<SignUp> {
                   Text(
                     "Already have an account?",
                     style:
-                    TextStyle(fontSize: 18, fontFamily: "AirbnbCereal_W_Md"),
+                    TextStyle(fontSize: 16),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       "Sign in",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Colors.blue.shade300,
                       ),
                     ),
