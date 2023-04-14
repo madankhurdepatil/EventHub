@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
-
 import 'package:flutter/material.dart';
+import 'package:pro_flutter/widget/share.dart';
+
 class EventDetails extends StatefulWidget {
   const EventDetails({Key? key}) : super(key: key);
 
@@ -16,16 +17,19 @@ class _EventDetailsState extends State<EventDetails> {
         children: [
           Stack(
             children: [
-              Image.asset("assets/event.png"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Image.asset("assets/event.png"),
+              ),
               Padding(
                 padding: EdgeInsets.only(top: 50, left: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.asset("assets/arrowleft.png"),
-                    SizedBox(
-                      width: 25,
-                    ),
+                    SizedBox(width: 25),
                     Text("Event Details",
                         style: TextStyle(fontSize: 20, color: Colors.white)),
                     SizedBox(width: 105),
@@ -40,10 +44,10 @@ class _EventDetailsState extends State<EventDetails> {
                 ),
               ),
               Positioned(
-                left: 30,
-                bottom: -5,
+                bottom: 0,
+                right: 30,
                 child: Container(
-                  height: 60,
+                  height: 50,
                   width: 300,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -55,7 +59,7 @@ class _EventDetailsState extends State<EventDetails> {
                         width: 120,
                         height: 60,
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(4.0),
                           child: Stack(
                             children: [
                               Positioned(
@@ -97,18 +101,33 @@ class _EventDetailsState extends State<EventDetails> {
                         ],
                       ),
                       SizedBox(width: 10),
-                      Container(
-                        height: 35,
-                        width: 80,
-                        decoration: BoxDecoration(
-                            color: Color(0xFF5669FF),
-                            borderRadius: BorderRadius.circular(8)),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 7),
-                          child: Text("INVITE",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.white),
-                              textAlign: TextAlign.center),
+                      GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25.0),
+                              ),
+                            ),
+                            context: context,
+                            builder: (context) {
+                              return Share();
+                            },
+                          );
+                        },
+                        child: Container(
+                          height: 35,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF5669FF),
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 7),
+                            child: Text("INVITE",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                                textAlign: TextAlign.center),
+                          ),
                         ),
                       ),
                     ],

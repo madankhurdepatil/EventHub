@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:pro_flutter/event_details.dart';
-import 'package:pro_flutter/home_screen.dart';
-import 'package:pro_flutter/sign_up.dart';
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:flutter/material.dart';
+import 'package:pro_flutter/home_screen.dart';
+import 'empty_notification.dart';
 import 'events.dart';
+import 'org_profile.dart';
+import'notification.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -18,9 +20,9 @@ class _DashboardState extends State<Dashboard> {
   List<Widget> pages = [
     HomeScreen(),
     Events(),
-    SignUp(),
-    EventDetails(),
-    EventDetails(),
+    NewNotification(),
+    EmptyNotification(),
+    OrgProfile(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -201,22 +201,25 @@ class _GridUpcomingState extends State<GridUpcoming> {
   Column buildViewMore() {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              "Upcoming Events",
-              style: TextStyle(
-                color: Color(0xFF120D26),
-                fontSize: 18,
-                fontFamily: "AirbnbCereal",
+        Padding(
+          padding:  EdgeInsets.only(right: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Upcoming Events",
+                style: TextStyle(
+                  color: Color(0xFF120D26),
+                  fontSize: 18,
+                  fontFamily: "AirbnbCereal",
+                ),
               ),
-            ),
-            Text(
-              "See all",
-              style: TextStyle(fontSize: 16),
-            ),
-          ],
+              Text(
+                "See all",
+                style: TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
         ),
       ],
     );

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:pro_flutter/widget/btm_searchwbar.dart';
 
 class WhiteSearchBar extends StatefulWidget {
   const WhiteSearchBar({Key? key}) : super(key: key);
@@ -11,6 +12,15 @@ class WhiteSearchBar extends StatefulWidget {
 }
 
 class _WhiteSearchBarState extends State<WhiteSearchBar> {
+  int i = 0;
+  List items = [
+    {"icon": Icons.sports_basketball, "text": "Sport"},
+    {"icon": Icons.music_note_rounded, "text": "Music"},
+    {"icon": Icons.cookie, "text": "Art"},
+    {"icon": Icons.restaurant_menu, "text": "Food"},
+    {"icon": Icons.restaurant, "text": "Food"}
+  ];
+  bool? isSelected;
   bool status1 = false;
   List listData = [
     {
@@ -91,7 +101,20 @@ class _WhiteSearchBarState extends State<WhiteSearchBar> {
               children: [
                 SizedBox(width: 20),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(25.0),
+                          ),
+                        ),
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (context) {
+                          return BottomSearch();
+                        },
+                      );
+                    },
                     icon: Icon(Icons.search_rounded),
                     iconSize: 30,
                     color: Color(0xFF5669FF)),
