@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:pro_flutter/onboarding.dart';
 import 'package:get/get.dart';
+import 'package:pro_flutter/splash_screen.dart';
 import 'controller/main_controller.dart';
 void main() {
   runApp(const MyApp());
@@ -30,7 +33,7 @@ class _MyAppState extends State<MyApp> {
           brightness: controller.isDark.value? Brightness.dark:Brightness.light,
         ),
         debugShowCheckedModeBanner: false,
-        home:  Onboarding(),
+        home:  SplashScreen(),
       );
       },
     );

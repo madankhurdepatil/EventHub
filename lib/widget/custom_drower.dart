@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../my_profile.dart';
+
 class CustomDrower extends StatefulWidget {
   const CustomDrower({Key? key}) : super(key: key);
 
@@ -39,8 +41,12 @@ class _CustomDrowerState extends State<CustomDrower> {
               child: CircleAvatar(
                 backgroundColor: Colors.blue,
                 radius: 50,
-                child: Image.asset("assets/profile.png",
-                    fit: BoxFit.cover, height: 150, width: 150),
+                child: GestureDetector(
+                  onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => MyProfile())),
+                  child: Image.asset("assets/profile.png",
+                      fit: BoxFit.cover, height: 150, width: 150),
+                ),
               ),
             ),
             SizedBox(height: 10),

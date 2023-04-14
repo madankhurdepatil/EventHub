@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:pro_flutter/see_all_events.dart';
 
 class Events extends StatefulWidget {
   const Events({Key? key}) : super(key: key);
@@ -86,7 +87,7 @@ class _EventsState extends State<Events> {
               Text("No Upcoming Event", style: TextStyle(fontSize: 30)),
               SizedBox(height: 20),
               Text(
-                "Lorem ipsum dolor sit amet, consectetur ",
+                "Lorem ipsum dolor sit amet,consectetur ",
                 style: TextStyle(fontSize: 20, color: Color(0xFF747688)),
                 textAlign: TextAlign.center,
               ),
@@ -96,7 +97,8 @@ class _EventsState extends State<Events> {
           Padding(
             padding: EdgeInsets.only(left: 50, right: 50),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SeeAllEvents())),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),

@@ -15,8 +15,6 @@ class BasicChipWidget extends StatefulWidget {
 
 class _BasicChipWidgetState extends State<BasicChipWidget> {
   bool ? isSelected;
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

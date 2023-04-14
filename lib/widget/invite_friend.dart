@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+
+import '../Invite_frinedsv1.dart';
+import '../frinds_invite.dart';
+
 class InviteFriend extends StatefulWidget {
   const InviteFriend({Key? key}) : super(key: key);
 
@@ -12,7 +16,7 @@ class _InviteFriendState extends State<InviteFriend> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
       child: Container(
         width: 330,
         height: 120,
@@ -62,9 +66,25 @@ class _InviteFriendState extends State<InviteFriend> {
                           borderRadius: BorderRadius.circular(8)),
                       child: Padding(
                         padding: EdgeInsets.only(top: 7),
-                        child: Text("INVITE",
-                            style: TextStyle(fontSize: 14, color: Colors.white),
-                            textAlign: TextAlign.center),
+                        child: GestureDetector(
+                          onTap: () {
+                            showModalBottomSheet(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(25.0),
+                                ),
+                              ),
+                              isScrollControlled: true,
+                              context: context,
+                              builder: (context) {
+                              return FriendsInvite();
+                            },);
+                          },
+                          child: Text("INVITE",
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white),
+                              textAlign: TextAlign.center),
+                        ),
                       ),
                     ),
                   ),
